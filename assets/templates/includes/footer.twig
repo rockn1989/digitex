@@ -1,0 +1,63 @@
+{% set rules = ["Privacy Policy", "Terms & Policies", "Risks Warning"] %}
+
+{% block content %}
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__inner">
+				<div class="footer__logo">
+					<a href="/"><img src="img/logo.svg" alt="Digitex "></a>
+				</div>
+				<div class="footer__rules">
+					<ul class="rules-list">
+						{% for item in rules %}
+							<li>
+								<a href="">{{item}}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="footer__social">
+					<ul class="social-list">
+						<li>
+							<a href="">
+								<svg width="8px" height="16px" class="icon-facebook">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icon-svg/sprite/sprite.svg#icon-facebook"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<svg width="20px" height="16px" class="icon-twitter">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icon-svg/sprite/sprite.svg#icon-twitter"></use>
+								</svg>
+							</a>
+						</li>
+
+						<li>
+							<a href="">
+								<svg width="19px" height="16px" class="icon-telegram">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icon-svg/sprite/sprite.svg#icon-telegram"></use>
+								</svg>
+							</a>
+						</li>
+
+						<li>
+							<a href="">
+								<svg width="17px" height="17px" class="icon-inst">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icon-svg/sprite/sprite.svg#icon-inst"></use>
+								</svg>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+				<div class="footer__copyright">
+					<div class="copyright">© 2017 – 2020</div>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+
+{% endblock %}

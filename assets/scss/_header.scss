@@ -1,0 +1,254 @@
+.header {
+	background: $black;
+	&__inner {
+	}
+	&__desc {
+		align-items: center;
+		width: 100%;
+		display: none;
+		@media (min-width: $desk-w-lg) {
+			display: flex;
+		}
+	}
+	&__mobile {
+		@media (min-width: $desk-w-lg) {
+			display: none;
+		}
+	}
+}
+
+.status {
+	@include text-size(10px, 14px);
+	position: relative;
+	margin-left: 5px;
+	padding-left: 8px;
+	text-transform: uppercase;
+	color: $white;
+	&:before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 5px;
+		height: 5px;
+		border-radius: 50%;
+		background: transparent;
+		transform: translateY(-50%);
+	}
+	&--success {
+		&:before {
+			background: $green;
+		}
+	}
+}
+
+.main-nav {
+	margin-left: 12px;
+	flex-grow: 1;
+	ul {
+		@include list-reset;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		li {
+			a {
+				@include text-size(13px, 18px);
+				padding: 0.85em 1.23em;
+				display: block;
+				color: $gray;
+				text-decoration: none;
+				position: relative;
+				&:after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 2px;
+					background-color: $blue;
+					transform: scale(0);
+					transform-origin: center;
+					transition: transform 0.3s ease;
+				}
+				&:hover {
+					&:after {
+						transform: scale(1);
+					}
+				}
+			}
+			&.active {
+				a {
+					color: $white;
+					font-weight: bold;
+					&:after {
+						transform: scale(1);
+					}
+				}
+			}
+		}
+	}
+}
+
+.top-bar {
+	margin-left: auto;
+	flex-grow: 2;
+}
+
+.user-info {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	&__balance {
+		margin-right: 30px;
+		display: flex;
+		align-items: center;
+	}
+	&__btn {
+		margin-right: 30px;
+		.btn {
+			@include text-size(13px, 18px);
+			padding: 0.23em 1.15em;
+		}
+	}
+	&__actions {
+		a {
+			margin-right: 18px;
+			display: inline-block;
+			&:last-child {
+				margin-right: 0;
+			}
+			svg {
+				color: #444444;
+				transition: color 0.3s ease;
+			}
+			&:hover {
+				svg {
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+.balance {
+	@include text-size(13px, 18px);
+	display: flex;
+	align-items: center;
+	color: #959595;
+	&__label {
+		margin-right: 10px;
+	}
+	&__value {
+		display: flex;
+		align-items: center;
+	}
+	&__amount {
+		@include text-size(16px, 24px);
+		position: relative;
+		margin-right: 5px;
+		padding-left: 15px;
+		color: $white;
+		font-weight: bold;
+		&:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 12px;
+			height: 12px;
+			display: block;
+			background: url("../img/icon-svg/icon-logo.svg") 0 center no-repeat;
+			background-size: 100%;
+			transform: translateY(-50%);
+		}
+	}
+	&__currency {
+		text-transform: uppercase;
+	}
+}
+
+/*___ Mobile menu ___*/
+
+.header__mobile {
+	padding: 7px 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.logo {
+		flex-grow: 1;
+	}
+}
+
+.mobile-nav {
+	@include list-reset();
+	font-size: 0;
+	line-height: 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-grow: 2;
+	li {
+		margin-left: 6.5%;
+		display: block;
+		@media (min-width: $tablet-w) {
+			margin-left: 4%;
+		}
+		a {
+			display: block;
+			svg {
+				color: $white;
+			}
+		}
+	}
+}
+
+.offcanvas-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: $white;
+	height: 100%;
+	min-width: 200px;
+	transform: translateX(-100%);
+	visibility: hidden;
+	transition: transform 0.3s, visibility 0.4s ease;
+	z-index: 999;
+	@media (min-width: $desk-w-lg) {
+		display: none;
+	}
+	&.open {
+		transform: translateX(0);
+		visibility: visible;
+	}
+	.balance {
+		padding: 0 1em;
+		flex-wrap: wrap;
+		&__label {
+			@include text-size(14px, 16px);
+			margin-bottom: 5px;
+			width: 100%;
+			font-weight: bold;
+			color: $black;
+		}
+		&__amount {
+			color: $black;
+		}
+	}
+}
+
+.mobile-menu {
+	@include list-reset();
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	li {
+		display: block;
+		a {
+			padding: 0.5em 1em;
+			display: block;
+			text-decoration: none;
+			color: $black;
+			border-bottom: 1px solid $lightGray;
+		}
+	}
+}

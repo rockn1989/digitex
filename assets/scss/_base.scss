@@ -1,0 +1,51 @@
+html,
+body {
+	font-size: $fontSize;
+	line-height: $lineHeight;
+	font-family: $mainFont;
+	color: $black;
+	font-weight: 400;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background: #000000;
+	& > .header,
+	& > .footer {
+		flex-grow: 0;
+	}
+	.page-wrapper {
+		flex-grow: 1;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 30px;
+	max-width: $containerWidth;
+}
+
+.container-full {
+	margin: 0;
+	padding: 0 30px;
+	max-width: $containerFullWidth;
+}
+
+a {
+	transition: color 0.3s ease;
+}
+
+.main {
+	width: 100%;
+	padding: 20px 0;
+}

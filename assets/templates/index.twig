@@ -1,0 +1,99 @@
+{% extends "layouts/default.twig" %}
+{% set title="Главная" %}
+{% set tabLinks = [
+	"Dashboard", 
+	"Wallet", 
+	"Refer a Friend", 
+	"DGTX Treasury", 
+	"Trade History",
+	"Battles", 
+	"Battle History",
+	"API",
+	"Security",
+	"Insurance Fund",
+	"Settings"
+	] %}
+
+
+{% block content %}
+	<div class="container">
+		<div class="tabs-wrapper">
+			<ul class="tabs">
+				{% for item in tabLinks %}
+					{% if loop.index == 9 %}
+						<li class="active">
+							<a href="">{{item}}</a>
+						</li>
+					{% else %}
+						<li>
+							<a href="">{{item}}</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+		<ul class="tabs-content">
+			{% for item in tabLinks %}
+				{% if loop.index == 9 %}
+					<li class="active">
+						<div class="security-steps">
+							<div class="security-steps__header">
+								<div class="security-steps__title">Enable Google authentification</div>
+								<div class="security-steps__steps-list">
+									<ul class="steps-list">
+										<li>1</li>
+										<li>2</li>
+										<li class="active">3</li>
+									</ul>
+								</div>
+							</div>
+							<div class="security-steps__body">
+								<div class="step">
+									<div class="step__count">Step 3</div>
+									<div class="step__desc">
+										Now type 6 number from your Google Authenticator app to activate 2FA authentication to your account
+									</div>
+									<div class="numbers-validate">
+										<form class="numbers-validate__form">
+											<input type="number" value="5" min="0" max="9">
+											<input type="number" value="4" min="0" max="9">
+											<input type="number" value="9" min="0" max="9">
+											<input type="number" value="1" min="0" max="9">
+											<input type="number" value="7" min="0" max="9">
+											<input type="number" value="2" min="0" max="9">
+										</form>
+										<div class="numbers-validate__status">
+											<span class="success visible">Correct</span>
+											<span class="failed">Incorrect</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="security-steps__footer">
+								<div class="steps__btns">
+									<a href="" class="btn btn--icon-left">
+										<svg width="15px" height="9px" class="arrow-left">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icon-svg/sprite/sprite.svg#icon-arrow-left"></use>
+										</svg>
+										Prev step
+									</a>
+									<a href="" class="btn btn--highlight btn--icon-right">
+										<svg width="15px" height="9px" class="arrow-right">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icon-svg/sprite/sprite.svg#icon-arrow-right"></use>
+										</svg>
+										Finish
+									</a>
+									<a href="" class="btn btn--cancel">Cancel</a>
+								</div>
+							</div>
+						</div>
+					</li>
+				{% else %}
+					<li>
+						333
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}

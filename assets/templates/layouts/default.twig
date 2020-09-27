@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+	{% include "../includes/head.twig" %}
+	<body>
+
+		{% include "../includes/header/header.twig" %}
+
+		<div class="page-wrapper">
+			<main class="main"> {% block content %}{% endblock %}
+				</main>
+			</div>
+			{% include "../includes/footer.twig" %}
+
+			{% include "../includes/scripts.twig" %}
+
+
+		</body>
+	</html>

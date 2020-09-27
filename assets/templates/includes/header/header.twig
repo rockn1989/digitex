@@ -1,0 +1,14 @@
+{% set navLinks = ["Futures", "Spot", "Community", "Tournaments", "Account","Help"] %}
+
+{% block content %}
+
+	<header class="header">
+		<div class="container-full">
+			<div class="header__inner">
+				{% include "./header-desc.twig" %}
+				{% include "./header-mobile.twig" %}
+			</div>
+		</div>
+	</header>
+
+{% endblock %}
